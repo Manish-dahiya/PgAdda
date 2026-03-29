@@ -262,7 +262,7 @@ function Page() {
                 <div className="text-center" >
                   
                   <h1  className="md:text-3xl pt-7">Start Your pg finding journey Today</h1>
-                  <p className="text-gray-500">Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PGHub guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
+                  <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PGHub guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
                   <div className="m-20" 
 
                   ><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton hover:scale-105 cursor-pointer">Explore properties</Link></div>

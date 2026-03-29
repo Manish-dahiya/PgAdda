@@ -21,7 +21,7 @@ function PropertyCard({ theme, item }) {
     {coverImg && <Image src={coverImg} alt='image' width={400} height={300} className='rounded-lg' priority/>}
      </div>
       <h1 className='font-bold my-1'>{name}</h1>
-      <p className='text-[#787a7e] mb-1'>    Enchanting three bedrooms, three bath home with spacious one
+      <p className=' mb-1'>    Enchanting three bedrooms, three bath home with spacious one
         bedroom, one bath...</p>
       {/* <p className='text-[#787a7e]'>propertyType: <span className='text-white'>{type}</span> </p>
         <p>furnishedType: {furnishedType}</p>
