@@ -160,7 +160,7 @@ function Page() {
               theme == "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Whether you're a student, working professional, or property owner,
+            Whether you are a student, working professional, or property owner,
             pgADDA is here to make PG discovery and listing simpler. Feel free
             to reach out if you have any issue regarding listings, accounts,
             reviews, or general platform support.
