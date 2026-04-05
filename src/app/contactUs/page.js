@@ -66,7 +66,7 @@ function Page() {
             }`}
           >
             Have a question, suggestion, feedback, or just want to say hello?
-            Reach out anytime. We’d love to hear from you.
+            Reach out anytime. We would love to hear from you.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
