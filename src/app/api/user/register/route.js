@@ -57,7 +57,9 @@ export async function POST(req){
         username:userResult.username,
         email:userResult.email,
         role:userResult.role,
-        contact:userResult.contact
+        contact:userResult.contact,
+        bio:userResult.bio,
+        avatar:userResult.avatar
     }
     const token=jwt.sign(data,privatekey)
     // res.cookie("token",token) //saving the username to the cookies

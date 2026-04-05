@@ -15,13 +15,16 @@ import { decodeToken } from '@/helper/helper'
 import { getOwnersProperties } from '@/redux/propertySlice'
 import {motion} from "framer-motion"
 
-import { logoutUser } from "../../redux/userSlice";
+import { logoutUser ,resetUpdateStatus} from "../../redux/userSlice";
 import { useRouter } from "next/navigation";
+import { fetchUser } from '../../redux/userSlice'
 
 import dynamic from 'next/dynamic'
 const LeafletMap = dynamic(() => import('@/components/LeafletMap'), {
   ssr: false,
 })
+
+import EditProfileModal from '@/components/EditProfileModal'
 
 
 const properties=[
@@ -95,9 +98,13 @@ function Page() {
     const theme= useSelector((state)=>state.getTheme.theme)
     const [active,setActive]=useState(2) //default properties set
     const userFromStore= useSelector((state)=>state.userData.user.data)
-    const [localUser,setLocalUser]=useState({username:null,email:null,contact:null,role:null})
+    const [localUser,setLocalUser]=useState({username:null,email:null,contact:null,role:null,bio:null,avatar:null})
     const [selectedLocation, setSelectedLocation] = useState(null);
     const ownerProp= useSelector((state)=>state.propertyData.ownerProperties)
+
+     // ── modal state ───────────────────────────────────────────────────────────
+    const [editOpen, setEditOpen] = useState(false)
+
     
     const dispatch= useDispatch()
     const router = useRouter();
@@ -120,6 +127,10 @@ function Page() {
       //   headers: { 'Content-Type': 'application/json' },
       // });
     };
+
+    useEffect(() => {
+        if (userFromStore) setLocalUser(userFromStore)
+    }, [userFromStore])
 
     useEffect(()=>{
        if(userFromStore){
@@ -147,25 +158,76 @@ function Page() {
     router.push("/login");
     };
 
+     // Reset updateStatus whenever modal is closed so it's clean next time
+    const handleCloseModal = () => {
+        setEditOpen(false)
+        dispatch(resetUpdateStatus())
+    }
+
+    //for edit the user info (there was old data after even editing because the token is old)
+    // Always sync fresh user data from DB on mount
+useEffect(() => {
+    if (userFromStore?._id) {
+        dispatch(fetchUser(userFromStore._id))
+    }
+}, [])
 
   return (
     <div  className={`h-[100vh] w-[100vw] ${theme == "dark" ? "bg-[#060606] text-white" : "lightTheme"}   overflow-x-hidden`}>
       <Navbar theme={theme} />
 
         {/* owner profile section*/}
-        <div className=' md:h-[40vh] flex z-2 justify-center items-center relative ' style={{backgroundImage:`url(${backgroundPattern})` , backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <Image src={backgroundPattern} alt="hii" className="opacity-20 z-1 pointer-events-none absolute top-0 left-0 w-full h-full object-cover"></Image>
+         {/* ── Edit profile modal ─────────────────────────────────────────── */}
+            <EditProfileModal
+                isOpen={editOpen}
+                onClose={handleCloseModal}
+                currentUser={localUser}
+            />
 
-            <div className='text-center'>
-                <Image src={defaultUser} alt="default user" className='rounded-full ' height={150} />
-                <h1 className='md:text-2xl'>{localUser.username?localUser.username:"user"}</h1>
-                <div className=' py-1 px-3 rounded-lg'>
-                    <button className=' hover:text-blue-400 cursor-pointer '>Edit</button> &nbsp; &nbsp; 
-                    <button className='hover:text-blue-400 cursor-pointer text-red-400' onClick={handleLogout} >Logout</button>
+            {/* ── Owner profile hero ─────────────────────────────────────────── */}
+            <div
+                className='md:h-[40vh] flex z-2 justify-center items-center relative'
+                style={{ backgroundImage: `url(${backgroundPattern})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            >
+                <Image
+                    src={backgroundPattern}
+                    alt=""
+                    className="opacity-20 z-1 pointer-events-none absolute top-0 left-0 w-full h-full object-cover"
+                />
+                <div className='text-center'>
+                    {/* Avatar — shows Cloudinary URL if available, else default */}
+                    <Image
+                        src={localUser?.avatar?.url || defaultUser}
+                        alt="profile"
+                        width={150}
+                        height={150}
+                        className='rounded-full mx-auto object-cover'
+                        unoptimized={!!localUser?.avatar?.url}
+                    />
+                    <h1 className='md:text-2xl mt-2'>{localUser.username || "user"}</h1>
+                    {localUser.bio && (
+                        <p className={`text-sm mt-1 max-w-xs mx-auto ${theme=="dark" ? "text-gray-400" : "text-gray-600"}`}>
+                            {localUser.bio}
+                        </p>
+                    )}
+                    <div className='py-1 px-3 rounded-lg mt-2'>
+                        {/* Edit button opens modal */}
+                        <button
+                            className='hover:text-blue-400 cursor-pointer transition-colors'
+                            onClick={() => setEditOpen(true)}
+                        >
+                            Edit
+                        </button>
+                        &nbsp;&nbsp;
+                        <button
+                            className='hover:text-blue-400 cursor-pointer text-red-400 transition-colors'
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </div>
                 </div>
-
             </div>
-        </div>
 
         {/* navigation section between owner properties and client */}
         <div className='h-10 border-b border-[#14141466] flex justify-center md:gap-10 mb-7'>

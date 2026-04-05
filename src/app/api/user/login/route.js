@@ -33,6 +33,8 @@ export async function POST(req){
             email:user.email,
             role:user.role,
             contact:user.contact,
+            bio:user.bio,
+            avatar:user.avatar
         }
         const token=jwt.sign(data,privatekey)
        return NextResponse.json({response:token,success:true},{status:201});

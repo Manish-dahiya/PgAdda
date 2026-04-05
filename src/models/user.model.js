@@ -17,13 +17,8 @@ const userSchema = mongoose.Schema({
         type: String
     },
     avatar: {
-        data: {
-            type: Buffer,   //<<<data type is buffer
-
-        },
-        contentType: { //will include the file type
-            type: String
-        }
+        url: { type: String },
+        publicId: { type: String },
     },
     bio: {
         type: String
@@ -40,5 +35,5 @@ const userSchema = mongoose.Schema({
 
 
 })
-const users = mongoose.models.users || mongoose.model("users",userSchema);
+const users = mongoose.models.users || mongoose.model("users", userSchema);
 export default users;
