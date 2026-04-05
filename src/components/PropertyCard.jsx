@@ -3,6 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { usePathname } from 'next/navigation'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteProperty } from '@/redux/propertySlice'  // adjust path
+import { useRouter } from 'next/navigation'
+
+
 
 function PropertyCard({ theme, item }) {
   let name= item?.propertyName 
@@ -15,6 +21,28 @@ function PropertyCard({ theme, item }) {
   let furnishedType=item?.furnishedType
   let bathrooms= item?.bathrooms
   let parking= item?.parking
+
+  //-----------------------------------delete functionality
+  const dispatch = useDispatch()
+  const userInfo = useSelector((state) => state.userData.user.data)
+
+  const pathname = usePathname()
+  const isOwnerRoute = pathname?.startsWith('/owner')
+
+   const handleDelete = () => {
+    if (!confirm('Are you sure you want to delete this property?')) return
+    dispatch(deleteProperty({ propertyId: id, ownerId: userInfo._id }))
+  }
+
+  //-----------------------------------edit functionality for the owner
+  const router = useRouter()
+
+const handleEdit = () => {
+    sessionStorage.setItem("editProperty", JSON.stringify(item))
+    router.push(`/owner/edit-property/${id}`)
+}
+
+
   return (
     <div className={`h-[400px] ${theme=="light" && "bg-[#cdbdeb]"}  w-auto md:mx-4  hover:scale-105 transition-transform border border-slate-500 rounded-lg px-3 pt-3 pb-4 flex flex-col`}>
      <div className='h-[550px] w-[270px] overflow-y-hidden flex justify-center items-center'>
@@ -51,6 +79,16 @@ function PropertyCard({ theme, item }) {
         </div>
         <Link href={`/properties/${id}`} className='hover:text-blue-500 cursor-pointer' >View details</Link>
       </div>
+
+      {/*should only appear when route is /owner  */}
+
+        {isOwnerRoute && (
+        <div className='flex justify-end gap-2 px-2'>
+          <button className='bg-blue-600 rounded-md py-1 px-2 text-white hover:bg-blue-500' onClick={handleEdit}
+>edit</button>
+          <button className='bg-red-600 rounded-md p-1 text-white hover:bg-red-500'  onClick={handleDelete}>delete</button>
+        </div>
+      )}
 
 
     </div>

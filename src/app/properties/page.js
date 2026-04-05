@@ -23,6 +23,7 @@ import Image from 'next/image'
 import clientIcon from "../../../public/clientIcon.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import notFoundImg from '../../../public/no-data-found.gif'
 
 import dynamic from 'next/dynamic'
 const LeafletMap = dynamic(() => import('@/components/LeafletMap'), {
@@ -174,38 +175,41 @@ function Page() {
                 </div>
                 {/* properties div */}
                 <div >
-                 <Swiper
-                        pagination={pagination}
-                        modules={[Pagination]}
-                        className="mySwiper h-[1200px]"
-                        onSlideChange={handleSlideChange} // Attach the slide change handler
-                    >
-                       
-                        {
-                            Array(Math.ceil(totalPropCount/10)).fill().map((item, index) => (
-                                <SwiperSlide key={index}>
-                                    {
-                                        loading ?
-                                            <div  className='grid md:grid-cols-4 gap-3 md:grid-rows-auto w-[100%]'>
-                                                {
-                                                    [1,2,3,4,5,6,7,8,9].map((item,index)=>(
-                                                        <SkeletonLoader key={index} />
-                                                    ))
-                                                }
-                                            </div>
-                                            : <div className='grid md:grid-cols-4 gap-2 md:grid-rows-auto w-[100%]'>
-                                                {
-                                                    currentPageProperties?.map((item, index) => (
-                                                        <div key={index} >
-                                                            <PropertyCard item={item} />
-                                                        </div>
-                                                    ))}
-                                            </div>
-                                    }
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>  
+                {currentPageProperties?.length === 0 && !loading ? (
+    <div className='flex flex-col justify-center items-center w-full h-[400px]'>
+        <Image src={notFoundImg} alt="No results found" width={300} height={300} />
+        <p className='text-lg mt-4 text-slate-400'>No properties found</p>
+    </div>
+) : (
+    <Swiper
+        pagination={pagination}
+        modules={[Pagination]}
+        className="mySwiper h-[1200px]"
+        onSlideChange={handleSlideChange}
+    >
+        {
+            Array(Math.ceil(totalPropCount / 10)).fill().map((item, index) => (
+                <SwiperSlide key={index}>
+                    {
+                        loading ?
+                            <div className='grid md:grid-cols-4 gap-3 md:grid-rows-auto w-[100%]'>
+                                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
+                                    <SkeletonLoader key={index} />
+                                ))}
+                            </div>
+                            : <div className='grid md:grid-cols-4 gap-2 md:grid-rows-auto w-[100%]'>
+                                {currentPageProperties?.map((item, index) => (
+                                    <div key={index}>
+                                        <PropertyCard item={item} />
+                                    </div>
+                                ))}
+                            </div>
+                    }
+                </SwiperSlide>
+            ))
+        }
+    </Swiper>
+)}
 
                     
                 </div>
