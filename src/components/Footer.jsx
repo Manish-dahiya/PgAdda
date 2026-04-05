@@ -5,8 +5,8 @@ import React from 'react'
 function Footer({theme}) {
   return (
     <div className=''>
-      <div className='text-center mb-8'>
-        <h1 className='text-2xl font-bold'>PgHub</h1>
+      <div className='text-center mb-8 pt-10'>
+        <h1 className='text-2xl font-bold'>PgAdda</h1>
         <p className={`text-sm mt-2 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
           Find the best PGs with ease
         </p>
@@ -72,7 +72,7 @@ function Footer({theme}) {
       >
         {/* Left */}
         <div className='text-center md:text-left'>
-          <p>© 2026 PgHub. All rights reserved.</p>
+          <p>© 2026 PgAdda. All rights reserved.</p>
           <p className={`text-xs mt-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
             Terms & Conditions
           </p>

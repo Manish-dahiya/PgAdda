@@ -199,15 +199,15 @@ function Page() {
                         Start Your PG Finding Journey Today
                     </h1>
 
-                    <p className={`${theme == "dark" ? "text-gray-500" : "text-gray-800"} text-sm md:text-base leading-relaxed`}>
-                        Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget.
+                    <p className={`${theme == "dark" ? "text-gray-500" : "text-gray-800"} text-sm md:text-base leading-relaxed pb-10`}>
+                        Start your PG-finding journey today with PgAdda! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PgAdda, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget.
                     </p>
 
-                    <div className="mt-8 md:mt-10">
+                    {/* <div className="mt-8 md:mt-10">
                         <Link href={"/properties"} className="rounded-lg px-5 py-3 inline-block pbutton">
                             Explore properties
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

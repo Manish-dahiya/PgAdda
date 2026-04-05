@@ -45,9 +45,18 @@ const handleEdit = () => {
 
   return (
     <div className={`h-[400px] ${theme=="light" && "bg-[#cdbdeb]"}  w-auto md:mx-4  hover:scale-105 transition-transform border border-slate-500 rounded-lg px-3 pt-3 pb-4 flex flex-col`}>
-     <div className='h-[550px] w-[270px] overflow-y-hidden flex justify-center items-center'>
-    {coverImg && <Image src={coverImg} alt='image' width={400} height={300} className='rounded-lg' priority/>}
-     </div>
+   <div className="w-full flex justify-center items-center overflow-hidden rounded-lg">
+  {coverImg && (
+    <Image
+      src={coverImg}
+      alt="image"
+      width={400}
+      height={300}
+      className="w-full h-auto max-h-[300px] object-cover rounded-lg object-center"
+      priority
+    />
+  )}
+</div>
       <h1 className='font-bold my-1'>{name}</h1>
       <p className=' mb-1'>    Enchanting three bedrooms, three bath home with spacious one
         bedroom, one bath...</p>
@@ -75,7 +84,7 @@ const handleEdit = () => {
       <div className="price flex justify-between items-center ">
         <div>
           <p>For Sale</p>
-          <span className='text-2xl text-green-400'>${price}</span>
+          <span className='text-2xl text-green-400'>&#8377; {`${price}/m`}</span>
         </div>
         <Link href={`/properties/${id}`} className='hover:text-blue-500 cursor-pointer' >View details</Link>
       </div>

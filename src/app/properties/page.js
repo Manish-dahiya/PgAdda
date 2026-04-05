@@ -117,17 +117,17 @@ function Page() {
 
 
     return (
-        <div className={`h-[100vh] w-[100vw] ${theme == "dark" ? "bg-[#060606] text-white" : "lightTheme"} overflow-x-hidden`}>
+        <div className={`min-h-[100vh] w-[100vw] ${theme == "dark" ? "bg-[#060606] text-white" : "lightTheme"} overflow-x-hidden`}>
             <Navbar theme={theme} />
             <div className='md:px-20 p-7 mt-24'>
                 <h1 className='text-xl md:2xl'>Find you dream Pg here </h1>
-                <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Welcome to PgHub where your dream pg awaits in every corner of our beautiful world.Explore our currated selection of PGs Each
+                <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Welcome to PgAdda where your dream pg awaits in every corner of our beautiful world.Explore our currated selection of PGs Each
                     offering a unique stay and chance to rediefine you journey.
                 </p>
             </div>
             {/* search bar */}
             <div className='flex md:gap-4 md:mx-20 m-7'>
-                <input type="text" placeholder='search'  name='propertyName' value={searchFields.propertyName} onChange={handleSearchFieldsChange}  className='border  bg-transparent w-[100%]  rounded-lg h-10 md:h-16 p-1 md:p-3 md:text-xl' />
+                <input type="text" placeholder='search by name like rajpal pgs or pg for boys'  name='propertyName' value={searchFields.propertyName} onChange={handleSearchFieldsChange}  className='border  bg-transparent w-[100%]  rounded-lg h-10 md:h-16 p-1 md:p-3 md:text-xl' />
                 <button className='border rounded-lg  px-4 py-1' onClick={()=>dispatch(getPropertiesByPagination({pgNo:1,filters:searchFields}))} >search</button>
             </div>
             
@@ -184,7 +184,8 @@ function Page() {
     <Swiper
         pagination={pagination}
         modules={[Pagination]}
-        className="mySwiper h-[1200px]"
+         className="mySwiper"
+    autoHeight={true}
         onSlideChange={handleSlideChange}
     >
         {
@@ -221,8 +222,8 @@ function Page() {
                 <div className="text-center" >
                   
                   <h1  className="md:text-3xl my-3">Start Your pg finding journey Today</h1>
-                  <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PGHub guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
-                  <div className="m-20"><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton ">Explore properties</Link></div>
+                  <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"} pt-10`}>Start your PG-finding journey today with PgAdda! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PgAdda, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PgAdda guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
+                  {/* <div className="m-20"><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton ">Explore properties</Link></div> */}
                 </div>
           </div>
             <Footer theme={theme}/>

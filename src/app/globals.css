@@ -9,8 +9,8 @@
 :root {
   --dark: #141414ec;
   --lightdark: #191919;
-  --purple: #703bf7;
-  --background-color: rgb(105, 136, 229);
+  --purple: #f0ecfa;
+  --background-color: rgb(182, 183, 185);
   --text-color: black;
 }
 
@@ -26,17 +26,17 @@
 }
 /* Light theme */
 .lightTheme {
-  background: rgb(112,59,247);
-  background: linear-gradient(220deg, rgba(112,59,247,1) 0%, rgb(110, 130, 201) 73%);
+  background: rgb(238, 237, 240);
+  background: linear-gradient(220deg, rgb(228, 228, 230) 0%, rgb(208, 209, 211) 73%);
 }
 .pbutton{
   background: rgb(112,59,247);
-background: linear-gradient(177deg, rgba(112,59,247,1) 0%, rgb(110, 130, 201) 85%);
+background: linear-gradient(177deg,rgb(228, 228, 230) 0%, rgb(208, 209, 211) 73%);
 
 }
 .navbarlight{
   background: rgb(112,59,247);
-background: linear-gradient(177deg, rgba(112,59,247,1) 0%, rgb(110, 130, 201) 85%);
+background: linear-gradient(177deg, rgb(228, 228, 230) 0%, rgb(208, 209, 211) 73%);
 }
 
 .aboutReviewDiv{

@@ -144,14 +144,14 @@ export default function Home() {
          <motion.div>
             <h1 className="md:text-4xl font-bold"
           >Discover Your Dream </h1>
-          <h1 className="md:text-4xl font-bold mt-1">Pg with PgHub!</h1>
+          <h1 className="md:text-4xl font-bold mt-1">Pg with PgAdda!</h1>
 
         </motion.div>
 
           <p className={`my-7 ${theme == "dark" ? " text-gray-500" : "text-gray-800"} text-lg`}>
             Your journey to find the perfect pg begins here. Explore your listings to find the stay that matches your dream.
           </p>
-          <Link href={"/properties"} className="pbutton px-3 py-3 rounded-lg hover:scale-105 transition-transform ">Browse properties</Link>
+          <Link href={"/properties"} className={`bg-[#7c5cff] hover:scale-105 transition-transform} px-3 py-3 rounded-lg hover:scale-105 transition-transform `}>Browse properties</Link>
           <div className="mt-4 md:mt-20 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:justify-items-center">
     <Card text={"Happy customers"} heading={"200+"} img={null} theme={theme} height={"auto"} width={"100%"} />
     <Card text={"Properties for Client"} heading={"10k"} img={null} theme={theme} height={"auto"} width={"100%"} />
@@ -218,7 +218,7 @@ export default function Home() {
         }}
         >Featured Properties</motion.h1>
         <div className=" md:flex md:justify-between ">
-          <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Explore our handpicked selection of featured properties.Each listings offeres a glimpse info exceptional PGs available throug PgHub.Click view details for more Info</p>
+          <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Explore our handpicked selection of featured properties.Each listings offeres a glimpse info exceptional PGs available throug PgAdda.Click view details for more Info</p>
           <button className={`${theme=="dark"?"darkTheme":"pbutton"} border  py-2 my-2 px-2 rounded-lg border-slate-500 hover:scale-105 transition-transform`}>view All properties</button>
         </div>
         <div className="flex flex-wrap gap-6 my-10">
@@ -286,7 +286,7 @@ export default function Home() {
             }}
             >
               <h1 className="font-bold text-3xl m-2">Our our Clients say</h1>
-              <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Read the happy stories of our valued clients.Discover why they choose PgHub for finding the perfect PGs</p>
+              <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Read the happy stories of our valued clients.Discover why they choose PgAdda for finding the perfect PGs</p>
             </motion.div>
 
             <motion.div className="my-20"
@@ -347,8 +347,8 @@ export default function Home() {
                     duration:0.3
                   }}
                   >Start Your pg finding journey Today</motion.h1>
-                  <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PGHub guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
-                  <div className="m-20 cursor-pointer hover:scale-105"><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton  ">Explore properties</Link></div>
+                  <p className={`${theme == "dark" ? " text-gray-500" : "text-gray-800"} pb-10`}>Start your PG-finding journey today with PgAdda! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PgAdda, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you’re a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PgAdda guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
+                  {/* <div className="m-20 cursor-pointer hover:scale-105"><Link href={"/properties"} className="rounded-lg px-3 py-3 cursor-pointer pbutton  ">Explore properties</Link></div> */}
                 </div>
           </div>
 

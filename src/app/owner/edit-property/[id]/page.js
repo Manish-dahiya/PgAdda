@@ -191,7 +191,7 @@ function Page() {
 
       {/* HERO / HEADER */}
       <div
-        className='relative mt-16 md:mt-20 py-14 md:py-20 border-b border-[#141414]'
+        className='relative z-1 mt-16 md:mt-20 py-14 md:py-20 border-b border-[#141414]'
         style={{
           backgroundImage: `url(${backgroundPattern.src})`,
           backgroundSize: 'cover',
@@ -203,7 +203,7 @@ function Page() {
           alt="backgroundPattern"
           className="opacity-20 absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className='relative z-10 text-center px-5'>
+        <div className='relative z-1 text-center px-5'>
           <h1 className='text-3xl md:text-5xl font-bold'>Edit Property</h1>
           <p className={`mt-3 ${theme == "dark" ? "text-gray-400" : "text-gray-700"} text-sm md:text-base`}>
             Update your property details, images and location.

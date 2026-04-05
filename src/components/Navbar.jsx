@@ -43,14 +43,14 @@ function Navbar({theme,setTheme}) {
     return (
         <div className={`h-10 md:h-20  w-full fixed z-10 px-10 top-0 z-11 ${theme=="dark"?"darkTheme":"navbarlight"} p-3 flex justify-between items-center`}>
             <div>
-                <h1 className='font-bold'>PgHub</h1>
+                <h1 className='font-bold'>PgAdda</h1>
             </div>
             {/* center div */}
             <div className='hidden md:flex gap-10'>
                 <Link href={"/"}>Home</Link>
                 <Link href={"/properties"}>Properties</Link>
                 <Link href={"/about"}>About Us</Link>
-                <button>Contact Us</button>
+                <Link href={"/contactUs"}>Contact Us</Link>
             </div>
             <div className='hidden md:flex  items-center gap-3'>
                 <div className='text-sm'>

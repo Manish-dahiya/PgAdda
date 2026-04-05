@@ -69,6 +69,12 @@ function Sidebar({ isSidebar, setIsSideBar, theme }) {
         <Link href={"/about"} className='border-b pb-2' onClick={() => setIsSideBar(false)}>
           About Us
         </Link>
+        <Link href={"/about"} className='border-b pb-2' onClick={() => setIsSideBar(false)}>
+          About Us
+        </Link>
+        <Link href={"/contactUs"} className='border-b pb-2' onClick={() => setIsSideBar(false)}>
+          Contact US
+        </Link>
       </div>
 
       {/* Bottom actions */}

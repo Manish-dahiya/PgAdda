@@ -141,7 +141,7 @@ function Page() {
                 
             <div>
               <h1 className="font-bold text-3xl m-2">Our our Clients say</h1>
-              <p className="">Read the happy stories of our valued clients.Discover why they choose PgHub for finding the perfect Pgs</p>
+              <p className="">Read the happy stories of our valued clients.Discover why they choose PgAdda for finding the perfect Pgs</p>
             </div>
 
             <div className="my-20 ">
@@ -172,8 +172,8 @@ function Page() {
                 <div className="text-center" >
                   
                   <h1  className="md:text-3xl my-3">Start Your pg finding journey Today</h1>
-                  <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"}`}>Start your PG-finding journey today with PGHub! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PGHub, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you are a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PGHub guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
-                  <div className="m-20"><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton ">Explore properties</Link></div>
+                  <p className={` ${theme == "dark" ? " text-gray-500" : "text-gray-800"} pb-10`}>Start your PG-finding journey today with PgAdda! Discover a seamless and convenient way to search for your ideal paying guest accommodation. At PgAdda, we understand the importance of finding a comfortable and affordable space that feels like home. Whether you are a student, a professional, or anyone in need of a place to stay, our platform offers a wide range of options tailored to your preferences and budget. Say goodbye to the hassle of endless searches and let PgAdda guide you to the perfect spot. Begin your journey with us today and find your next home with ease and confidence!</p>
+                  {/* <div className="m-20"><Link href={"/properties"} className="rounded-lg px-3 py-3 pbutton ">Explore properties</Link></div> */}
                 </div>
           </div>
 

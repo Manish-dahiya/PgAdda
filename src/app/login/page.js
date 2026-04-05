@@ -70,17 +70,17 @@ function Page() {
        
             {isloggin?<h1 className='text-2xl text-gray-300'>Login to your account</h1>:<h1 className='text-2xl text-gray-300'>Create a New Account</h1>}
             <div>
-            <input type="text" name='username' value={formData.username} onChange={handleChange} placeholder='username'  className='text-center  text-white bg-[#14141466] px-2 w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg' />
+            <input type="text" name='username' value={formData.username} onChange={handleChange} placeholder='username'  className='text-center  text-white bg-[#14141466] px-2 w-64 md:w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg' />
             </div>
-            {!isloggin &&<div> <input type="text" value={formData.email} onChange={handleChange}  name='email' placeholder='email' className='text-center   text-white bg-[#14141466] px-2 w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg' /></div>
+            {!isloggin &&<div> <input type="text" value={formData.email} onChange={handleChange}  name='email' placeholder='email' className='text-center   text-white bg-[#14141466] px-2 w-64 md:w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg' /></div>
             }
            <div>
             <form action="">
-             <input type="password" name='password' value={formData.password} onChange={handleChange} placeholder='password'  className='text-center   text-white bg-[#14141466] px-2 w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg'  />
+             <input type="password" name='password' value={formData.password} onChange={handleChange} placeholder='password'  className='text-center   text-white bg-[#14141466] px-2 w-64 md:w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg'  />
              </form>
              </div>
 
-           {!isloggin &&<div> <input type="text" name='contact' value={formData.contact} onChange={handleChange} placeholder='contact:99999'  className='text-center   text-white bg-[#14141466] px-2 w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg'  /></div>
+           {!isloggin &&<div> <input type="text" name='contact' value={formData.contact} onChange={handleChange} placeholder='contact:99999'  className='text-center   text-white bg-[#14141466] px-2 w-64 md:w-96  md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg'  /></div>
            }
            <div  className='text-center'> 
             <label htmlFor="role" className=''>Select Role </label><br />
