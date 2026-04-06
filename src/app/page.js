@@ -31,42 +31,42 @@ const properties=[
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744 rs'
   },
   {
     id:1,
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744 rs'
   },
   {
     id:1,
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744rs'
   },
   {
     id:1,
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744 rs'
   },
   {
     id:1,
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744rs'
   },
   {
     id:1,
     images:[{url:"https://res.cloudinary.com/dsilckk9k/image/upload/v1732169507/properties/vaqndvcm44wmurcjyqkz.jpg"}],
     name:"luxiry palace PGs",
     desc:"this is a nice pg",
-    price:'$8744'
+    price:'8744rs'
   }
 ]
 const reviews=[

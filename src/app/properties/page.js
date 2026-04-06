@@ -140,10 +140,10 @@ function Page() {
                 </select>
                 <select name="propertyRent" value={searchFields.propertyRent} id="" onChange={handleSearchFieldsChange} className={`${theme == "dark" ? "text-white bg-[#14141466]" : "bg-transparent text-black"} w-[240px] text-center    md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg`}>
                     <option value="" hidden>Prices-Range</option>
-                    <option value="2000">less than $2000</option>
-                    <option value="4000">less than $4000</option>
-                    <option value="6000">less than $6000</option>
-                    <option value="more">more than $6000</option>
+                    <option value="2000">less than &#8377;2000</option>
+                    <option value="4000">less than &#8377;4000</option>
+                    <option value="6000">less than &#8377;6000</option>
+                    <option value="more">more than &#8377;6000</option>
                 </select>
                 <select name="furnishedType" value={searchFields.furnishedType} onChange={handleSearchFieldsChange} id="" className={`${theme == "dark" ? "text-white bg-[#14141466]" : "bg-transparent text-black"} w-[240px] text-center    md:h-16 h-10 border border-gray-300 dark:border-gray-700 rounded-lg`}>
                     <option value="" hidden >Furnished-Type</option>

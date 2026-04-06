@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 
 function PropertyCard({ theme, item }) {
   let name= item?.propertyName 
-  let price=item?.propertyRent 
+  let price=item?.propertyRent ||"2200"
   let id=item?._id
   let coverImg= item?.images[0].url
   let desc= item?.propertyDesc

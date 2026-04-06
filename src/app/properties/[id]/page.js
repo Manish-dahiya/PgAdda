@@ -72,7 +72,7 @@ function Page() {
                         <p className='md:my-4 my-3 text-sm md:text-base'>
                             Price:
                             <span className='font-bold bg-gray-500 rounded py-2 px-3 inline-block ml-2 text-center'>
-                                ${currentProperty && currentProperty[0]?.propertyRent}
+                                &#8377;{currentProperty && currentProperty[0]?.propertyRent}
                             </span>
                         </p>
 
